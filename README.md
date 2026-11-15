@@ -1,6 +1,6 @@
 # weiter. – Deine Lernzentrale
 
-Eine deutschsprachige persönliche Startseite für sieben vorhandene Lernwebsites in fünf Fächern. Eigenständige Gestaltung in tiefem Bordeaux, Creme und hellem Zitronenton, ergänzt durch passende Illustrationen je Fach.
+Eine deutschsprachige persönliche Startseite für sieben vorhandene Lernwebsites in fünf Fächern. Eigenständige Gestaltung in Nachtblau, Elfenbein und goldenen Akzenten, ergänzt durch passende Illustrationen je Fach.
 
 ## Nutzen
 

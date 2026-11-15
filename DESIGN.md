@@ -4,7 +4,7 @@
 
 Das Bücherregal ergänzt den freigegebenen Entwurf als neue Standardansicht. Farbige Buchrücken in unterschiedlichen Höhen stehen auf einem warmen Holzregal. Bücher öffnen dieselben echten Lernseiten wie die Karten. Ein kurzes Herausziehen legt beim Hover oder Tastaturfokus das Cover frei; daneben stehen eine Cover-Vorschau und die Öffnen-Aktion. Auf kleinen Bildschirmen verteilen sich die Bücher auf mehrere Regalböden. Die Kartenansicht bleibt über einen Schalter erreichbar und die Auswahl wird im Browser gespeichert. Der ursprüngliche Entwurf ist zusätzlich im Git-Verlauf und als separates ZIP gesichert.
 
-Eine persönliche Sammlung mit dem Charakter eines beweglichen Stapels von Lernblättern. Tiefes Bordeaux `#301321`, warmes Creme `#f4efdf` und Zitronenton `#e3ef9a` bilden die Hauptpalette. Die Fächerillustrationen besitzen eigene, gedämpfte Papierfarben. Syne bringt eine eigenständige, breite Typografie; Instrument Sans trägt die kleinen Oberflächentexte. Beide Schriften werden lokal geladen.
+Eine persönliche Sammlung mit dem Charakter eines beweglichen Stapels von Lernblättern. Nachtblau `#152238`, Elfenbein `#f3ede1` und Gold `#d6ad60` bilden die Hauptpalette. Die Fächerillustrationen besitzen eigene, gedämpfte Papierfarben. Syne bringt eine eigenständige, breite Typografie; Instrument Sans trägt die kleinen Oberflächentexte. Beide Schriften werden lokal geladen.
 
 Die Übersicht ist unmittelbar nutzbar. Der Stapel öffnet eine echte Lernseite; die Sammlung enthält die sieben verifizierten Links. Es gibt keine erfundenen Lernerfolge oder vorausgefüllten Favoriten. „Zuletzt geöffnet“ erscheint erst nach einer tatsächlichen Linköffnung aus dem Portal.
 
@@ -13,7 +13,7 @@ Die Übersicht ist unmittelbar nutzbar. Der Stapel öffnet eine echte Lernseite;
 - Der Fächerstapel reagiert als räumliches Objekt auf Mausbewegungen. Sieben beschriftete Auswahlbuttons sowie Vor-/Zurück-Buttons ermöglichen auch Tastatur- und Touch-Bedienung.
 - Beim Wechsel einer Vorschau gleitet die jeweilige Illustration kurz ein. Vorige Animationen werden abgebrochen, sodass kein Animationsstau entsteht.
 - Eine kreisförmige helle Fläche folgt der Pointerposition auf den Fächerillustrationen. Die Zeichnung reagiert leicht auf die Maus. Die äußere Karte hebt sich beim Hover.
-- Die zitronenfarbene Hauptaktion besitzt eine fließende Füllung und leichte magnetische Bewegung. Links und Favoriten haben klare Fokuszustände.
+- Die goldfarbene Hauptaktion besitzt eine fließende Füllung und leichte magnetische Bewegung. Links und Favoriten haben klare Fokuszustände.
 - Such- und Filterergebnisse erhalten eine kurze gestaffelte Einblendung. Es gibt keine künstlichen Ladezustände für sofort verfügbare Inhalte.
 
 ## 20 UI-Regeln
@@ -29,12 +29,12 @@ Die Übersicht ist unmittelbar nutzbar. Der Stapel öffnet eine echte Lernseite;
 | 7 | Sammlung und direkter Einstieg erhalten den meisten Platz. |
 | 8 | Fach, Beschreibung, Illustration und Öffnen-Aktion sind als eine Einheit gruppiert. Favoriten bleiben getrennt bedienbar. |
 | 9 | „Womit legst du heute los?“ führt zu den konkreten Fächern und Seitentiteln. |
-| 10 | Die Hauptaktion im Einstieg ist zitronenfarben; Karten öffnen ihre jeweilige Lernseite. |
-| 11 | Zitronenton markiert aktive Zustände auf Bordeaux. Fachfarben bleiben zurückhaltend und wiedererkennbar. |
+| 10 | Die Hauptaktion im Einstieg ist goldfarben; Karten öffnen ihre jeweilige Lernseite. |
+| 11 | Gold markiert aktive Zustände auf Nachtblau. Fachfarben bleiben zurückhaltend und wiedererkennbar. |
 | 12 | Sterne und Suchsymbol nutzen einheitliche SVG-Strichstärke; Richtungspfeile haben einheitliche Textformen. |
 | 13 | Die Illustration vermittelt das jeweilige Fach. Keine Glanzflächen, kein Autoplay-Video und keine endlosen Partikeleffekte. |
 | 14 | Karten, Innenflächen, Buttons und kleine Kreisaktionen besitzen abgestimmte Radien. |
-| 15 | Creme auf Bordeaux, dunkle Schrift auf hellen Fachflächen. Kein Text hinter einer verzerrten Glasfläche. |
+| 15 | Creme auf Nachtblau, dunkle Schrift auf hellen Fachflächen. Kein Text hinter einer verzerrten Glasfläche. |
 | 16 | Umbrüche und Seitenbreite bei 1440, 1024, 768, 390 und 320 px geprüft. |
 | 17 | Buttontext, Pfeile, Suchsymbol und Favoriten sind mittig ausgerichtet. |
 | 18 | Tabellarische Ziffern global für Zähler und wechselnde Vorschauwerte. |

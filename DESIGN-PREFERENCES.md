@@ -9,3 +9,7 @@ Stand: 15.11.2026. Ausdrückliche Rückmeldung des Nutzers: Der aktuelle Entwurf
 - Neue Regalansicht wird als umschaltbare Variante ergänzt. Die Kartenansicht bleibt direkt wählbar. Die Auswahl wird in diesem Browser gespeichert.
 
 Diese Datei bewahrt die Präferenzen projektbezogen für spätere Arbeiten auf. Sie ist keine Zusage einer chatübergreifenden Kontospeicherung.
+
+## Aktuell gewählte Farbpalette
+
+Der Nutzer hat aus vier Bildentwürfen ausdrücklich Variante 1 gewählt: Nachtblau `#152238`, Elfenbein `#F3EDE1` und goldene Akzente `#D6AD60`. Diese Wahl betrifft die gesamte Website einschließlich Regal- und Kartenansicht. Die bestehenden sieben Buchfarben bleiben erhalten. Die frühere Bordeaux-Creme-Fassung bleibt als historische Referenz gesichert.
