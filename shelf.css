@@ -165,3 +165,8 @@ body[data-layout=books] .site-grid{display:block}
 @media(prefers-reduced-motion:reduce){.book-object,.shelf-cover,.shelf-open,.shelf-open>span,.layout-switch button{transition:none!important;animation:none!important}.shelf-book:hover .book-object,.shelf-book:focus-within .book-object,.shelf-book.is-selected .book-object{transform:rotateZ(var(--book-lean,0deg))!important}}
 @media print{.layout-control,.shelf-preview,.shelf-instruction{display:none}.bookcase{padding:0}.shelf-level{break-inside:avoid}.book-object{transform:none!important}.shelf-board{box-shadow:none}.book-link:after{content:attr(href);display:block;font:8px Arial;writing-mode:vertical-rl}}
 
+
+/* Subjects identify the course; book titles name its actual content. */
+.spine-imprint{font:600 10px/1.2 var(--body);letter-spacing:.02em;margin-bottom:19px}
+@media(max-width:650px){.spine-imprint{font-size:9px;margin-bottom:17px}}
+.shelf-cover h3,.side-title{overflow-wrap:anywhere;hyphens:manual}

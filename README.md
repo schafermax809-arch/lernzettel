@@ -6,6 +6,7 @@ Eine deutschsprachige persönliche Startseite für sieben vorhandene Lernwebsite
 
 - Umschaltbare Ansichten „Regal“ und „Karten“. Das Bücherregal ist der neue Einstieg; die freigegebene Kartenansicht bleibt erhalten. Die Auswahl wird lokal gespeichert.
 - Jede Lernseite ist ein Buch. Beim Hover oder Tastaturfokus zieht es sich heraus; die Vorschau zeigt Cover, Beschreibung, Favorit und Website-Link. Auf Touch-Geräten wechseln die Vorschaupfeile das Buch.
+- Buchrücken nennen konkrete Inhalte: Normalverteilung, Ökologie, Kostenrechnung, Inflation und EZB, Web und Algorithmen, Statistik und Binomialverteilung sowie Beschaffung und Lager. Das Fach steht unten am Rücken, die Vorschau nennt weitere Unterthemen. Die Suche findet auch diese Themen.
 - Direkter Einstieg über einen beweglichen Fächerstapel mit sieben auswählbaren Vorschauen.
 - Alle Lernseiten nach Fach filtern und nach Namen oder Themen durchsuchen. Die Suche berücksichtigt auch Begriffe wie „Ökologie“ ohne Umlaut.
 - Favoriten setzen und im eigenen Bereich wiederfinden.
