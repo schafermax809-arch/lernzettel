@@ -2,6 +2,8 @@
 
 ## Eigene Richtung
 
+Das Bücherregal ergänzt den freigegebenen Entwurf als neue Standardansicht. Farbige Buchrücken in unterschiedlichen Höhen stehen auf einem warmen Holzregal. Bücher öffnen dieselben echten Lernseiten wie die Karten. Ein kurzes Herausziehen legt beim Hover oder Tastaturfokus das Cover frei; daneben stehen eine Cover-Vorschau und die Öffnen-Aktion. Auf kleinen Bildschirmen verteilen sich die Bücher auf mehrere Regalböden. Die Kartenansicht bleibt über einen Schalter erreichbar und die Auswahl wird im Browser gespeichert. Der ursprüngliche Entwurf ist zusätzlich im Git-Verlauf und als separates ZIP gesichert.
+
 Eine persönliche Sammlung mit dem Charakter eines beweglichen Stapels von Lernblättern. Tiefes Bordeaux `#301321`, warmes Creme `#f4efdf` und Zitronenton `#e3ef9a` bilden die Hauptpalette. Die Fächerillustrationen besitzen eigene, gedämpfte Papierfarben. Syne bringt eine eigenständige, breite Typografie; Instrument Sans trägt die kleinen Oberflächentexte. Beide Schriften werden lokal geladen.
 
 Die Übersicht ist unmittelbar nutzbar. Der Stapel öffnet eine echte Lernseite; die Sammlung enthält die sieben verifizierten Links. Es gibt keine erfundenen Lernerfolge oder vorausgefüllten Favoriten. „Zuletzt geöffnet“ erscheint erst nach einer tatsächlichen Linköffnung aus dem Portal.

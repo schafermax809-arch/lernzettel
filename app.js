@@ -10,6 +10,8 @@
  let favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(id=>known.has(id)):[]);
  let recents=Array.isArray(storedRecents)?storedRecents.filter(item=>item&&known.has(item.id)&&Number.isFinite(item.at)).sort((a,b)=>b.at-a.at).filter((item,i,list)=>list.findIndex(other=>other.id===item.id)===i).slice(0,4):[];
  let subject='Alle',onlyFavorites=false,query='',featured=0,toastTimer=0,artAnimation=null;
+ let layout=read('weiter-layout-v1','books')==='cards'?'cards':'books';
+ const originalHeading=$('#hero-heading').innerHTML,originalCopy=$('.hero-copy>p').innerHTML;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover: hover) and (pointer: fine)');
  const star='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9Z"/></svg>';
  function toast(message){const node=$('#toast');node.textContent=message;node.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>node.hidden=true,2400);}
@@ -18,11 +20,13 @@
  function renderFavorites(){
   $('#favorites-count').textContent=String(favorites.size);$('#favorites-nav').setAttribute('aria-pressed',String(onlyFavorites));
   $$('[data-favorite]').forEach(button=>{const site=sites.find(site=>site.id===button.dataset.favorite),favorite=favorites.has(site.id);button.setAttribute('aria-pressed',String(favorite));button.setAttribute('aria-label',`${site.title} ${favorite?'aus Favoriten entfernen':'zu Favoriten hinzufügen'}`);});
+  ShelfView.refreshFavorites(favorites);
  }
  function render(){
-  const filtered=matchingSites();$('#site-grid').innerHTML=filtered.map(cardMarkup).join('');
+  const filtered=matchingSites();$('#site-grid').innerHTML=layout==='books'?ShelfView.markup(filtered,favorites):filtered.map(cardMarkup).join('');
+  if(layout==='books')ShelfView.mounted();
   $('#results-status').textContent=`${filtered.length} ${filtered.length===1?'Lernseite':'Lernseiten'}${onlyFavorites?' in deinen Favoriten':''}`;
-  $('#collection-heading').innerHTML=onlyFavorites?'Deine Favoriten<span>.</span>':'Such dir deinen<br>nächsten Schritt aus<span>.</span>';
+  $('#collection-heading').innerHTML=onlyFavorites?'Deine Favoriten<span>.</span>':layout==='books'?'Dein Bücherregal<span>.</span>':'Such dir deinen<br>nächsten Schritt aus<span>.</span>';
   $('#reset-filters').hidden=subject==='Alle'&&!query&&!onlyFavorites;
   $('#empty-state').hidden=filtered.length!==0;
   const trulyEmptyFavorites=onlyFavorites&&favorites.size===0;
@@ -32,6 +36,16 @@
   renderFavorites();
  }
  function reset(){subject='Alle';query='';onlyFavorites=false;$('#search').value='';render();}
+ function applyLayout(){
+  document.body.dataset.layout=layout;
+  $$('[data-layout-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layoutChoice===layout)));
+  $('#hero-heading').innerHTML=layout==='books'?'Dein Wissen.<br>Gut einsortiert<span class="word-dot">.</span>':originalHeading;
+  $('.hero-copy>p').innerHTML=layout==='books'?'Nimm dir ein Thema aus dem Regal. Jedes Buch öffnet eine deiner Lernseiten.':originalCopy;
+  $('.hero-copy>.pill-button>span').textContent=layout==='books'?'Zum Bücherregal':'Deine Sammlung entdecken';
+  render();
+ }
+ $$('[data-layout-choice]').forEach(button=>button.addEventListener('click',()=>{layout=button.dataset.layoutChoice;write('weiter-layout-v1',layout);applyLayout();}));
+ ShelfView.compact.addEventListener('change',()=>{if(layout==='books')render();});
  function scrollCollection(){const heading=$('#collection-heading');$('#sammlung').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});heading.tabIndex=-1;heading.focus({preventScroll:true});}
  function renderRecents(){
   $('#recent-section').hidden=recents.length===0;
@@ -75,6 +89,7 @@
   if(event.key==='Escape'&&event.target===$('#search')&&query){event.preventDefault();query='';$('#search').value='';render();}
  });
  window.addEventListener('storage',event=>{
+  if(event.key==='weiter-layout-v1'){layout=read(event.key,'books')==='cards'?'cards':'books';applyLayout();}
   if(event.key==='weiter-favorites-v1'){const value=read(event.key,[]);favorites=new Set(Array.isArray(value)?value.filter(id=>known.has(id)):[]);render();}
   if(event.key==='weiter-recents-v1'){const value=read(event.key,[]);recents=Array.isArray(value)?value.filter(item=>item&&known.has(item.id)&&Number.isFinite(item.at)).slice(0,4):[];renderRecents();}
  });
@@ -94,5 +109,5 @@
  }
  document.addEventListener('pointermove',event=>{if(event.pointerType!=='mouse'||!fine.matches||reduced.matches)return;pending={target:event.target,x:event.clientX,y:event.clientY};if(!frame)frame=requestAnimationFrame(applyMotion);},{passive:true});
  document.addEventListener('pointerleave',resetMotion);window.addEventListener('blur',resetMotion);reduced.addEventListener('change',resetMotion);fine.addEventListener('change',resetMotion);
- render();renderRecents();setFeatured(0);
+ applyLayout();renderRecents();setFeatured(0);
 })();

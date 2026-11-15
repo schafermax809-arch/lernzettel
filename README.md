@@ -4,6 +4,8 @@ Eine deutschsprachige persönliche Startseite für sieben vorhandene Lernwebsite
 
 ## Nutzen
 
+- Umschaltbare Ansichten „Regal“ und „Karten“. Das Bücherregal ist der neue Einstieg; die freigegebene Kartenansicht bleibt erhalten. Die Auswahl wird lokal gespeichert.
+- Jede Lernseite ist ein Buch. Beim Hover oder Tastaturfokus zieht es sich heraus; die Vorschau zeigt Cover, Beschreibung, Favorit und Website-Link. Auf Touch-Geräten wechseln die Vorschaupfeile das Buch.
 - Direkter Einstieg über einen beweglichen Fächerstapel mit sieben auswählbaren Vorschauen.
 - Alle Lernseiten nach Fach filtern und nach Namen oder Themen durchsuchen. Die Suche berücksichtigt auch Begriffe wie „Ökologie“ ohne Umlaut.
 - Favoriten setzen und im eigenen Bereich wiederfinden.
@@ -19,6 +21,8 @@ Statische Website ohne Build-Schritt. Zum Vorschauen im Ordner einen HTTP-Server
 - `sites.js`: Katalog und geometrische SVG-Illustrationen.
 - `app.js`: Suche, Filter, Favoriten, Verlauf, Vorschauen und Pointer-Effekte.
 - `styles.css`: Gestaltung, mobile Ansichten und reduzierte Bewegung.
+- `shelf.js` und `shelf.css`: Bücherregal, Cover-Vorschau und mobile Regalböden.
+- `DESIGN-PREFERENCES.md`: Festgehaltene Designvorlieben und Referenz auf die gesicherte Ausgangsversion.
 - `fonts/`: Selbst gehostete Syne und Instrument Sans mit vollständigen OFL-Lizenzen.
 
 ## Neue Lernseite ergänzen
