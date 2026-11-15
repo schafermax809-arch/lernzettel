@@ -10,6 +10,10 @@ Die Übersicht ist unmittelbar nutzbar. Der Stapel öffnet eine echte Lernseite;
 
 ## Interaktionen
 
+- Der Kopfbereich ist für die Regalansicht verkleinert; der eigentliche Lerninhalt beginnt früher. Die Kartenansicht behält ihren großzügigen Einstieg.
+- Sieben Cover besitzen eigene Motive und Satzvarianten. Dieselben Cover erscheinen in der Hover-Vorschau, im Inhaltsbereich und beim Aufklappen.
+- Der Inhaltsbereich zeigt echte Kapitel-Links und das tatsächlich zuletzt geöffnete Kapitel. Touch und Tastatur können ihn über „Inhalt“ am jeweiligen Buch auswählen. Es gibt keine erfundenen Lernprozente.
+- Ein kurz aufklappendes Buch begleitet normale Linköffnungen. Escape bricht das Öffnen ab. Bei reduzierter Bewegung, Mittel- oder Modifikatortasten wird nativ geöffnet. Ein blockiertes Fenster führt zu einem direkten Link im Buchdialog.
 - Der Fächerstapel reagiert als räumliches Objekt auf Mausbewegungen. Sieben beschriftete Auswahlbuttons sowie Vor-/Zurück-Buttons ermöglichen auch Tastatur- und Touch-Bedienung.
 - Beim Wechsel einer Vorschau gleitet die jeweilige Illustration kurz ein. Vorige Animationen werden abgebrochen, sodass kein Animationsstau entsteht.
 - Eine kreisförmige helle Fläche folgt der Pointerposition auf den Fächerillustrationen. Die Zeichnung reagiert leicht auf die Maus. Die äußere Karte hebt sich beim Hover.
@@ -47,6 +51,8 @@ Die 22 Ideen wurden auch für den Portalzweck berücksichtigt. Ruhiges Papierwei
 
 ## Geprüft
 
+- Erweiterte Bibliothek: sechs Bildschirmbreiten, alle sieben echten Lernseiten mit Kapitelziel und gespeicherter Fortsetzung, interne Kapitelwechsel in VWL und Informatik, Kapitelvorschau, Tastatur und mobile Inhaltsauswahl.
+- Aufklappen mit erfolgreicher Taböffnung, Escape vor der Navigation, direkter Ersatzlink bei blockiertem Fenster und native Öffnung bei reduzierter Bewegung. Keine JavaScript-Seitenfehler im Verbindungstest.
 - Sieben reale Lernseiten mit HTTP 200; Titel und Beschreibungen mit vorhandenen Quellen abgeglichen.
 - Vorschau vor/zurück, Fachfilter, Suche ohne Umlaut, Such- und Favoriten-Leerzustände.
 - Favoriten nach Neuladen erhalten. Verlauf wird nur bei Linköffnung ergänzt und bleibt ebenfalls erhalten; Leeren funktioniert.

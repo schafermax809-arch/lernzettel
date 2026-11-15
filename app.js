@@ -15,7 +15,7 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover: hover) and (pointer: fine)');
  const star='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9Z"/></svg>';
  function toast(message){const node=$('#toast');node.textContent=message;node.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>node.hidden=true,2400);}
- function cardMarkup(site,index){const favorite=favorites.has(site.id);return `<article class="site-card theme-${site.theme}" style="--i:${index}" data-site="${site.id}"><a class="site-link" href="${site.url}" target="_blank" rel="noopener noreferrer" data-open="${site.id}" aria-label="${esc(site.title)} öffnen, neuer Tab"><div class="site-visual"><span class="visual-index">${String(sites.indexOf(site)+1).padStart(2,'0')} / ${esc(site.subject)}</span>${PortalArt(site.art)}<span class="visual-label">${esc(site.label)}</span></div><div class="site-info"><div class="site-kicker"><span>${esc(site.subject)}</span><span>${esc(site.kicker)}</span></div><h3>${esc(site.title)}<span aria-hidden="true">↗</span></h3><p>${esc(site.description)}</p><div class="site-bottom"><span>Deine Lernseite</span><span>Öffnen</span></div></div></a><button class="favorite-button" type="button" data-favorite="${site.id}" aria-pressed="${favorite}" aria-label="${esc(site.title)} ${favorite?'aus Favoriten entfernen':'zu Favoriten hinzufügen'}">${star}</button></article>`;}
+ function cardMarkup(site,index){const favorite=favorites.has(site.id),resume=LearningLibrary.resume(site.id);return `<article class="site-card theme-${site.theme}" style="--i:${index}" data-site="${site.id}"><a class="site-link" href="${esc(resume?.url||site.url)}" target="_blank" rel="noopener noreferrer" data-open="${site.id}" aria-label="${esc(site.title)} öffnen, neuer Tab"><div class="site-visual"><span class="visual-index">${String(sites.indexOf(site)+1).padStart(2,'0')} / ${esc(site.subject)}</span>${PortalArt(site.art)}<span class="visual-label">${esc(site.label)}</span></div><div class="site-info"><div class="site-kicker"><span>${esc(site.subject)}</span><span>${esc(site.kicker)}</span></div><h3>${esc(site.title)}<span aria-hidden="true">↗</span></h3><p>${esc(site.description)}</p><div class="site-bottom"><span>${resume?esc(resume.title):'Deine Lernseite'}</span><span>${resume?'Weiterlernen':'Öffnen'}</span></div></div></a><button class="favorite-button" type="button" data-favorite="${site.id}" aria-pressed="${favorite}" aria-label="${esc(site.title)} ${favorite?'aus Favoriten entfernen':'zu Favoriten hinzufügen'}">${star}</button></article>`;}
  function matchingSites(){const tokens=fold(query.trim()).split(/\s+/).filter(Boolean);return sites.filter(site=>(subject==='Alle'||subject===site.subject)&&(!onlyFavorites||favorites.has(site.id))&&tokens.every(token=>fold([site.title,site.subject,site.kicker,site.description,site.bookTitle,site.spineTitle,...(site.bookTopics||[]),...site.tags].join(' ')).includes(token)));}
  function renderFavorites(){
   $('#favorites-count').textContent=String(favorites.size);$('#favorites-nav').setAttribute('aria-pressed',String(onlyFavorites));
@@ -39,8 +39,8 @@
  function applyLayout(){
   document.body.dataset.layout=layout;
   $$('[data-layout-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layoutChoice===layout)));
-  $('#hero-heading').innerHTML=layout==='books'?'Dein Wissen.<br>Gut einsortiert<span class="word-dot">.</span>':originalHeading;
-  $('.hero-copy>p').innerHTML=layout==='books'?'Nimm dir ein Thema aus dem Regal. Jedes Buch öffnet eine deiner Lernseiten.':originalCopy;
+  $('#hero-heading').innerHTML=layout==='books'?'Dein nächstes Kapitel<span class="word-dot">.</span>':originalHeading;
+  $('.hero-copy>p').innerHTML=layout==='books'?'Sieben Lernseiten, ein Regal. Öffne ein Buch oder spring direkt in ein Kapitel.':originalCopy;
   $('.hero-copy>.pill-button>span').textContent=layout==='books'?'Zum Bücherregal':'Deine Sammlung entdecken';
   render();
  }
@@ -80,8 +80,9 @@
    if(onlyFavorites){render();const next=$('[data-favorite]')||$('#empty-reset');next.focus({preventScroll:true});}else renderFavorites();
    if(!saved)toast('Favoriten bleiben für diesen Besuch erhalten. Speichern ist gerade nicht möglich.');return;
   }
-  const link=event.target.closest('[data-open]');if(link)recordOpen(link.dataset.open);
+  const link=event.target.closest('[data-open]');if(link&&!event.defaultPrevented)recordOpen(link.dataset.open);
  });
+ document.addEventListener('weiter:opened',event=>recordOpen(event.detail.id));
  document.addEventListener('auxclick',event=>{if(event.button===1){const link=event.target.closest('[data-open]');if(link)recordOpen(link.dataset.open);}});
  document.addEventListener('keydown',event=>{
   const editing=event.target.matches('input,textarea,select')||event.target.isContentEditable;
@@ -89,6 +90,7 @@
   if(event.key==='Escape'&&event.target===$('#search')&&query){event.preventDefault();query='';$('#search').value='';render();}
  });
  window.addEventListener('storage',event=>{
+  if(event.key?.startsWith('weiter-resume-v1:')&&layout==='cards')render();
   if(event.key==='weiter-layout-v1'){layout=read(event.key,'books')==='cards'?'cards':'books';applyLayout();}
   if(event.key==='weiter-favorites-v1'){const value=read(event.key,[]);favorites=new Set(Array.isArray(value)?value.filter(id=>known.has(id)):[]);render();}
   if(event.key==='weiter-recents-v1'){const value=read(event.key,[]);recents=Array.isArray(value)?value.filter(item=>item&&known.has(item.id)&&Number.isFinite(item.at)).slice(0,4):[];renderRecents();}

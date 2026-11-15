@@ -4,6 +4,11 @@ Eine deutschsprachige persönliche Startseite für sieben vorhandene Lernwebsite
 
 ## Nutzen
 
+- Kompakter Kopfbereich: Das Regal steht auf dem ersten Bildschirm; zuletzt geöffnete Seiten folgen unter der Sammlung.
+- Sieben eigens gestaltete Buchcover mit Glockenkurve, Ökologie-Motiv, Kostenblatt, Euro, Code-Ablauf, Statistik und Beschaffung.
+- Inhaltsvorschau mit 80 echten Kapitelzielen. „Inhalt“ ist auch auf Touch-Geräten erreichbar; längere Inhaltsverzeichnisse lassen sich aufklappen.
+- „Weiterlernen“ öffnet das zuletzt tatsächlich geöffnete Lernkapitel. Bestehende letzte Kapitel aus Mathe Klausur 2, Biotop und den beiden BRC-Lernseiten werden zusätzlich übernommen.
+- Kurze Aufklappanimation vor dem Öffnen eines Buchs oder Kapitels. Reduzierte Bewegung sowie Öffnen per Mittel- oder Modifikatortaste verwenden direkt den normalen Link. Blockiert der Browser ein neues Fenster, bleibt ein direkt bedienbarer Link sichtbar.
 - Umschaltbare Ansichten „Regal“ und „Karten“. Das Bücherregal ist der neue Einstieg; die freigegebene Kartenansicht bleibt erhalten. Die Auswahl wird lokal gespeichert.
 - Jede Lernseite ist ein Buch. Beim Hover oder Tastaturfokus zieht es sich heraus; die Vorschau zeigt Cover, Beschreibung, Favorit und Website-Link. Auf Touch-Geräten wechseln die Vorschaupfeile das Buch.
 - Buchrücken nennen konkrete Inhalte: Normalverteilung, Ökologie, Kostenrechnung, Inflation und EZB, Web und Algorithmen, Statistik und Binomialverteilung sowie Beschaffung und Lager. Das Fach steht unten am Rücken, die Vorschau nennt weitere Unterthemen. Die Suche findet auch diese Themen.
@@ -23,12 +28,17 @@ Statische Website ohne Build-Schritt. Zum Vorschauen im Ordner einen HTTP-Server
 - `app.js`: Suche, Filter, Favoriten, Verlauf, Vorschauen und Pointer-Effekte.
 - `styles.css`: Gestaltung, mobile Ansichten und reduzierte Bewegung.
 - `shelf.js` und `shelf.css`: Bücherregal, Cover-Vorschau und mobile Regalböden.
+- `covers.js`: Eigene SVG-Cover und Buchgestaltung.
+- `library.js`: Kapitelkatalog, direkte Kapiteladressen und lokale Merkhilfe für die verbundenen Lernseiten.
+- `library.css`: Kompakter Einstieg, Inhaltsverzeichnis, individuelle Cover und Aufklappanimation.
 - `DESIGN-PREFERENCES.md`: Festgehaltene Designvorlieben und Referenz auf die gesicherte Ausgangsversion.
 - `fonts/`: Selbst gehostete Syne und Instrument Sans mit vollständigen OFL-Lizenzen.
 
 ## Neue Lernseite ergänzen
 
 In `sites.js` einen weiteren Eintrag mit eindeutiger `id`, `subject`, `title`, `kicker`, `description`, `tags`, `url`, `art`, `theme` und `label` hinzufügen. Neue Fachkategorien zusätzlich in `subjects` in `app.js` ergänzen. Aktuell stehen sieben Vorschauen und fünf Fächer im Einführungstext; diese Zahlen bei einer Erweiterung ebenfalls anpassen.
+
+Kapitel in `library.js` ergänzen. Alle sieben vorhandenen Lernseiten binden diese Datei über `../lernzettel/library.js` ein. Sie merken das tatsächlich angezeigte Kapitel unter `weiter-resume-v1:<id>`. Die Daten bleiben im Browser; es gibt kein Konto, keine Fortschrittsprozente ohne Beleg und keine Übertragung des Lernstands an einen Server. Die Verbindung funktioniert unter der gemeinsamen GitHub-Pages-Origin und im selben Browserprofil. Andere Geräte oder getrennte Browserprofile teilen diesen Stand nicht. VWL, Informatik und das ältere Mathe-Lerncenter erhalten über die Merkhilfe die Kapiteladressen `#weiter/<id>`. Bestehende Hash-Routen der anderen Lernseiten werden unverändert verwendet. Bei BRC Lernwelt bleibt der Kurskontext über `?kurs=main` beziehungsweise `?kurs=glaeser` erhalten.
 
 ## GitHub Pages
 

@@ -9,11 +9,14 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/syne.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=4-navy">
-  <link rel="stylesheet" href="shelf.css?v=4-navy">
-  <script src="sites.js?v=4-navy" defer></script>
-  <script src="shelf.js?v=4-navy" defer></script>
-  <script src="app.js?v=4-navy" defer></script>
+  <link rel="stylesheet" href="styles.css?v=6-library">
+  <link rel="stylesheet" href="shelf.css?v=6-library">
+  <script src="sites.js?v=6-library" defer></script>
+  <link rel="stylesheet" href="library.css?v=6-library">
+  <script src="library.js?v=6-library" defer></script>
+  <script src="covers.js?v=6-library" defer></script>
+  <script src="shelf.js?v=6-library" defer></script>
+  <script src="app.js?v=6-library" defer></script>
 </head>
 <body data-layout="books">
   <a class="skip-link" href="#sammlung">Zur Sammlung</a>
@@ -53,7 +56,6 @@
       </section>
       <div class="cover-end wrap"><span>Ein guter Ort, um weiterzumachen.</span><a href="#sammlung">Runterscrollen <span aria-hidden="true">↓</span></a></div>
   </div>
-      <section class="recent-section wrap" id="recent-section" aria-labelledby="recent-title" hidden><div class="recent-heading"><h2 id="recent-title">Zuletzt geöffnet</h2><button type="button" id="clear-recent">Verlauf leeren</button></div><div id="recent-list" class="recent-list"></div></section>
       <section class="collection-section wrap" id="sammlung" aria-labelledby="collection-heading">
         <div class="collection-heading"><div><span class="section-index">01 / DEINE SAMMLUNG</span><h2 id="collection-heading">Such dir deinen<br>nächsten Schritt aus<span>.</span></h2></div><p>Erklärungen, Übungen und Klausurtraining.<br>Deine Lernseiten, nach Fach sortiert.</p></div>
         <div class="collection-tools"><div class="filters" id="subject-filters" role="group" aria-label="Nach Fach filtern"></div><div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search">Lernseiten durchsuchen</label><input type="search" id="search" placeholder="Fach oder Thema suchen" autocomplete="off"><kbd aria-hidden="true">/</kbd></div></div>
@@ -61,9 +63,10 @@
         <div class="site-grid" id="site-grid"></div>
         <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∗</span><h3 id="empty-title">Hier ist noch Platz.</h3><p id="empty-description"></p><button type="button" class="ink-button" id="empty-reset">Sammlung anzeigen <span aria-hidden="true">↗</span></button></div>
       </section>
+      <section class="recent-section wrap" id="recent-section" aria-labelledby="recent-title" hidden><div class="recent-heading"><h2 id="recent-title">Zuletzt geöffnet</h2><button type="button" id="clear-recent">Verlauf leeren</button></div><div id="recent-list" class="recent-list"></div></section>
       <section class="closing wrap"><div class="closing-mark" aria-hidden="true">w.</div><div><p>Ein Ort für alles,<br>was du noch vorhast.</p><span>Heute ein kleiner Schritt. Morgen ein bisschen weiter.</span></div><a href="#start" class="back-to-top" aria-label="Zurück nach oben">↑</a></section>
     </main>
-    <footer class="footer wrap"><a class="footer-brand" href="#start">weiter.</a><span>Favoriten und Verlauf bleiben in diesem Browser.</span><span>Dein Lernraum. Dein Tempo.</span></footer>
+    <footer class="footer wrap"><a class="footer-brand" href="#start">weiter.</a><span>Favoriten, Verlauf und letzte Kapitel bleiben in diesem Browser.</span><span>Dein Lernraum. Dein Tempo.</span></footer>
     <div class="toast" id="toast" role="status" hidden></div>
     <noscript><div class="noscript wrap">Aktiviere JavaScript für Suche und Favoriten. Deine Lernseiten: <a href="https://schafermax809-arch.github.io/mathe-klausur2/">Mathe Klausur 2</a> · <a href="https://schafermax809-arch.github.io/mathe/">Mathe Lerncenter</a> · <a href="https://schafermax809-arch.github.io/biotop-lernplattform/">Biotop</a> · <a href="https://schafermax809-arch.github.io/brc-lernwelt/">BRC Lernwelt</a> · <a href="https://schafermax809-arch.github.io/BRC/">BRC Lernraum</a> · <a href="https://schafermax809-arch.github.io/VWL/">VWL Studio</a> · <a href="https://schafermax809-arch.github.io/Informatik/">Informatik</a></div></noscript>
 </body>
