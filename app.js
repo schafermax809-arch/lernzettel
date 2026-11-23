@@ -40,7 +40,7 @@
   document.body.dataset.layout=layout;
   $$('[data-layout-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layoutChoice===layout)));
   $('#hero-heading').innerHTML=layout==='books'?'Dein nächstes Kapitel<span class="word-dot">.</span>':originalHeading;
-  $('.hero-copy>p').innerHTML=layout==='books'?'Sieben Lernseiten, ein Regal. Öffne ein Buch oder spring direkt in ein Kapitel.':originalCopy;
+  $('.hero-copy>p').innerHTML=layout==='books'?`${sites.length} Lernseiten, ein Regal. Öffne ein Buch oder spring direkt in ein Kapitel.`:originalCopy;
   $('.hero-copy>.pill-button>span').textContent=layout==='books'?'Zum Bücherregal':'Deine Sammlung entdecken';
   render();
  }
