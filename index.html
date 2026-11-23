@@ -9,14 +9,14 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/syne.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=6-library">
-  <link rel="stylesheet" href="shelf.css?v=6-library">
-  <script src="sites.js?v=6-library" defer></script>
-  <link rel="stylesheet" href="library.css?v=6-library">
-  <script src="library.js?v=6-library" defer></script>
-  <script src="covers.js?v=6-library" defer></script>
-  <script src="shelf.js?v=6-library" defer></script>
-  <script src="app.js?v=6-library" defer></script>
+  <link rel="stylesheet" href="styles.css?v=7-geldpolitik">
+  <link rel="stylesheet" href="shelf.css?v=7-geldpolitik">
+  <script src="sites.js?v=7-geldpolitik" defer></script>
+  <link rel="stylesheet" href="library.css?v=7-geldpolitik">
+  <script src="library.js?v=7-geldpolitik" defer></script>
+  <script src="covers.js?v=7-geldpolitik" defer></script>
+  <script src="shelf.js?v=7-geldpolitik" defer></script>
+  <script src="app.js?v=7-geldpolitik" defer></script>
 </head>
 <body data-layout="books">
   <a class="skip-link" href="#sammlung">Zur Sammlung</a>
@@ -33,7 +33,7 @@
       <div class="layout-control wrap"><div class="layout-switch" role="group" aria-label="Ansicht wählen"><button type="button" data-layout-choice="books" aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3h4v14H2zM8 3h4v14H8zM14 4l3-1 3 13-3 1z"/></svg>Regal</button><button type="button" data-layout-choice="cards" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3h6v6H2zM12 3h6v6h-6zM2 12h6v6H2zM12 12h6v6h-6z"/></svg>Karten</button></div></div>
       <section class="hero wrap" aria-labelledby="hero-heading">
         <div class="hero-copy">
-          <div class="hero-index"><span class="index-line" aria-hidden="true"></span><span>7 Lernseiten. 5 Fächer. Dein Tempo.</span></div>
+          <div class="hero-index"><span class="index-line" aria-hidden="true"></span><span>8 Lernseiten. 5 Fächer. Dein Tempo.</span></div>
           <h1 id="hero-heading">Womit legst<br>du heute <span class="hero-word">los<span class="word-dot">?</span><svg viewBox="0 0 210 30" aria-hidden="true"><path d="M6 21Q98 2 203 13"/></svg></span></h1>
           <p>Alles, was du zum Lernen gebaut hast.<br>Hier findet jeder nächste Schritt seinen Platz.</p>
           <a class="pill-button magnetic" href="#sammlung"><span>Deine Sammlung entdecken</span><span class="button-arrow" aria-hidden="true">↗</span></a>
@@ -51,7 +51,7 @@
             </a>
             <span class="deck-note" aria-hidden="true">Ein Fach. Viele Möglichkeiten.</span>
           </div>
-          <div class="deck-navigation"><span class="deck-counter"><strong id="deck-current">01</strong><span> / 07</span></span><div class="deck-dots" id="deck-dots" role="group" aria-label="Vorschau auswählen"></div><div class="deck-arrows"><button id="previous-site" type="button" aria-label="Vorherige Lernseite">←</button><button id="next-site" type="button" aria-label="Nächste Lernseite">→</button></div></div>
+          <div class="deck-navigation"><span class="deck-counter"><strong id="deck-current">01</strong><span> / 08</span></span><div class="deck-dots" id="deck-dots" role="group" aria-label="Vorschau auswählen"></div><div class="deck-arrows"><button id="previous-site" type="button" aria-label="Vorherige Lernseite">←</button><button id="next-site" type="button" aria-label="Nächste Lernseite">→</button></div></div>
         </div>
       </section>
       <div class="cover-end wrap"><span>Ein guter Ort, um weiterzumachen.</span><a href="#sammlung">Runterscrollen <span aria-hidden="true">↓</span></a></div>
@@ -59,7 +59,7 @@
       <section class="collection-section wrap" id="sammlung" aria-labelledby="collection-heading">
         <div class="collection-heading"><div><span class="section-index">01 / DEINE SAMMLUNG</span><h2 id="collection-heading">Such dir deinen<br>nächsten Schritt aus<span>.</span></h2></div><p>Erklärungen, Übungen und Klausurtraining.<br>Deine Lernseiten, nach Fach sortiert.</p></div>
         <div class="collection-tools"><div class="filters" id="subject-filters" role="group" aria-label="Nach Fach filtern"></div><div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search">Lernseiten durchsuchen</label><input type="search" id="search" placeholder="Fach oder Thema suchen" autocomplete="off"><kbd aria-hidden="true">/</kbd></div></div>
-        <div class="results-meta"><span id="results-status" role="status" aria-live="polite">7 Lernseiten</span><button type="button" id="reset-filters" hidden>Alle Seiten anzeigen <span aria-hidden="true">↗</span></button><span class="new-tab-note">Lernseiten öffnen in einem neuen Tab <span aria-hidden="true">↗</span></span></div>
+        <div class="results-meta"><span id="results-status" role="status" aria-live="polite">8 Lernseiten</span><button type="button" id="reset-filters" hidden>Alle Seiten anzeigen <span aria-hidden="true">↗</span></button><span class="new-tab-note">Lernseiten öffnen in einem neuen Tab <span aria-hidden="true">↗</span></span></div>
         <div class="site-grid" id="site-grid"></div>
         <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∗</span><h3 id="empty-title">Hier ist noch Platz.</h3><p id="empty-description"></p><button type="button" class="ink-button" id="empty-reset">Sammlung anzeigen <span aria-hidden="true">↗</span></button></div>
       </section>
@@ -68,6 +68,6 @@
     </main>
     <footer class="footer wrap"><a class="footer-brand" href="#start">weiter.</a><span>Favoriten, Verlauf und letzte Kapitel bleiben in diesem Browser.</span><span>Dein Lernraum. Dein Tempo.</span></footer>
     <div class="toast" id="toast" role="status" hidden></div>
-    <noscript><div class="noscript wrap">Aktiviere JavaScript für Suche und Favoriten. Deine Lernseiten: <a href="https://schafermax809-arch.github.io/mathe-klausur2/">Mathe Klausur 2</a> · <a href="https://schafermax809-arch.github.io/mathe/">Mathe Lerncenter</a> · <a href="https://schafermax809-arch.github.io/biotop-lernplattform/">Biotop</a> · <a href="https://schafermax809-arch.github.io/brc-lernwelt/">BRC Lernwelt</a> · <a href="https://schafermax809-arch.github.io/BRC/">BRC Lernraum</a> · <a href="https://schafermax809-arch.github.io/VWL/">VWL Studio</a> · <a href="https://schafermax809-arch.github.io/Informatik/">Informatik</a></div></noscript>
+    <noscript><div class="noscript wrap">Aktiviere JavaScript für Suche und Favoriten. Deine Lernseiten: <a href="https://schafermax809-arch.github.io/vwl-geldpolitik/">VWL – Geldpolitik</a> · <a href="https://schafermax809-arch.github.io/mathe-klausur2/">Mathe Klausur 2</a> · <a href="https://schafermax809-arch.github.io/mathe/">Mathe Lerncenter</a> · <a href="https://schafermax809-arch.github.io/biotop-lernplattform/">Biotop</a> · <a href="https://schafermax809-arch.github.io/brc-lernwelt/">BRC Lernwelt</a> · <a href="https://schafermax809-arch.github.io/BRC/">BRC Lernraum</a> · <a href="https://schafermax809-arch.github.io/VWL/">VWL Studio</a> · <a href="https://schafermax809-arch.github.io/Informatik/">Informatik</a></div></noscript>
 </body>
 </html>

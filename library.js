@@ -2,6 +2,37 @@
 // Shared, browser-local chapter links and last actually viewed learning chapter.
 window.LearningLibrary=(()=>{
  const catalog=[
+{
+  "id": "vwl-geldpolitik",
+  "repo": "vwl-geldpolitik",
+  "prefix": "#lernen/",
+  "chapters": [
+    {
+      "id": "organe",
+      "title": "EZB & Organe"
+    },
+    {
+      "id": "ausrichtung",
+      "title": "Geldpolitische Ausrichtung"
+    },
+    {
+      "id": "instrumente",
+      "title": "Geldpolitische Instrumente"
+    },
+    {
+      "id": "preisstabilitaet",
+      "title": "Preisniveaustabilität"
+    },
+    {
+      "id": "transmission",
+      "title": "Transmissionsmechanismus"
+    },
+    {
+      "id": "unabhaengigkeit",
+      "title": "Unabhängigkeit & Grenzen"
+    }
+  ]
+},
  {
   "id": "mathe2",
   "repo": "mathe-klausur2",
